@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Consolas, monospace;
+}
+
+body {
+  background: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+
+.activity-bar {
+  width: 50px;
+  background: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.icon {
+  padding: 10px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.icon.active,
+.icon:hover {
+  opacity: 1;
+  background: #444;
+}
+
+.sidebar {
+  width: 200px;
+  background: #252526;
+  padding: 10px;
+}
+
+.sidebar-header {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.file {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.file:hover {
+  background: #373737;
+}
+
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.title-bar {
+  background: #2d2d2d;
+  padding: 8px;
+  font-size: 13px;
+}
+
+.tabs {
+  display: flex;
+  background: #252526;
+}
+
+.tab {
+  padding: 8px 15px;
+  border-right: 1px solid #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tab span {
+  opacity: 0.5;
+}
+
+.tab.active {
+  background: #1e1e1e;
+}
+
+
+.editor {
+  flex: 1;
+  display: flex;
+  background: #1e1e1e;
+}
+
+.line-numbers {
+  background: #1e1e1e;
+  padding: 10px;
+  text-align: right;
+  color: #858585;
+}
+
+.line-numbers span {
+  display: block;
+}
+
+.code {
+  padding: 10px;
+  white-space: pre;
+}
+
+.status-bar {
+  background: #007acc;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.status-bar span {
+  margin-right: 15px;
+}
