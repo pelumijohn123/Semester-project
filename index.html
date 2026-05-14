@@ -3,74 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <title>VS Code Clone</title>
-  <link rel="stylesheet" href="vs.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vscode/codicons@0.0.35/dist/codicon.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body> 
-  <script src="vs.js"></script>
+<body>
 
 <div class="app">
 
-  
   <div class="activity-bar">
-    <div class="icon active">📁</div>
-    <div class="icon">🔍</div>
-    <div class="icon">🌿</div>
-    <div class="icon">🐞</div>
-    <div class="icon">⚙️</div>
+    <div class="act-icon active" onclick="toggleSidebar(this)" title="Explorer">
+      <i class="codicon codicon-files"></i>
+    </div>
+    <div class="act-icon" title="Search">
+      <i class="codicon codicon-search"></i>
+    </div>
+    <div class="act-icon" title="Source Control">
+      <i class="codicon codicon-source-control"></i>
+    </div>
+    <div class="act-icon" title="Run & Debug">
+      <i class="codicon codicon-debug-alt"></i>
+    </div>
+    <div class="act-icon bottom" title="Settings">
+      <i class="codicon codicon-settings-gear"></i>
+    </div>
   </div>
 
-  <div class="sidebar">
-    <div class="sidebar-header">EXPLORER</div>
-    <div class="file">index.html</div>
-    <div class="file">styles.css</div>
-    <div class="file">app.js</div>
+  
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-title">EXPLORER</div>
+    <div class="file" id="fi-index.html" onclick="openFile('index.html')">index.html</div>
+    <div class="file" id="fi-styles.css"  onclick="openFile('styles.css')">styles.css</div>
+    <div class="file" id="fi-app.js"      onclick="openFile('app.js')">app.js</div>
   </div>
 
 
   <div class="main">
 
- 
-    <div class="title-bar">VS Code </div>
+    <div class="title-bar">VS Code</div>
 
-
-    <div class="tabs">
-      <div class="tab active">index.html <span>×</span></div>
-      <div class="tab">styles.css <span>×</span></div>
-    </div>
+    <div class="tabs" id="tabs"></div>
 
 
     <div class="editor">
-      <div class="line-numbers">
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-      </div>
-
-      <div class="code">
-<pre>
-&lt;h1&gt;Hello World&lt;/h1&gt;
-&lt;p&gt;VS Code &lt;/p&gt;
-</pre>
-      </div>
+      <div class="lines" id="lines"></div>
+      <div class="code" id="editor" contenteditable="true" spellcheck="false"></div>
     </div>
 
+    
     <div class="status-bar">
-      <div class="left">
-        <span>main</span>
-        <span>⚠ 0</span>
-      </div>
-      <div class="right">
-        <span>Ln 1, Col 1</span>
+      <span class="s-left"><i class="codicon codicon-source-control"></i> main &nbsp; <i class="codicon codicon-warning"></i> 0</span>
+      <span class="s-right">
+        <span id="statusPos">Ln 1, Col 1</span>
         <span>Spaces: 2</span>
         <span>UTF-8</span>
-        <span>HTML</span>
-      </div>
+        <span>CRLF</span>
+        <span id="statusLang">HTML</span>
+        <span>✓ Prettier</span>
+      </span>
     </div>
 
   </div>
-
 </div>
-<script src="other.js"></script>
+
+<script src="app.js"></script>
 </body>
 </html>
